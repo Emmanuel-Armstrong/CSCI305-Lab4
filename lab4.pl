@@ -6,8 +6,7 @@
 % Each edge is given as (i,j,weight), with weight > 0.
 
 :-dynamic
-		rpath/2
-
+		rpath/2.
 
 edge(1,2,1.6).
 edge(1,3,1.5).
@@ -29,7 +28,7 @@ edge(6,9,1.7).
 edge(7,8,1.6).
 edge(8,9,1.8).
 
-%you code will start from here 
+% your code will start from here 
  
 path(X,Y,Length) :- edge(Y,X,Length).
 path(X,Y,Length) :- edge(X,Y,Length).
@@ -62,3 +61,6 @@ go(X, Y) :-
 	  writef('Shortest path is %w with distance %w = %w\n',
 	       [Path, Length, Distance]);
 	writef('There is no route from %w to %w\n', [X, Y]).
+	
+shortest(X, Y, Path, Length) :-
+	go(X, Y).
